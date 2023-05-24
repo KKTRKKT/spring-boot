@@ -1,4 +1,4 @@
-package me.kktrkkt.springboot;
+package me.kktrkkt.springboot.starter;
 
 import me.kktrkkt.springbootstarter.Book;
 import org.springframework.beans.factory.annotation.Autowired;
