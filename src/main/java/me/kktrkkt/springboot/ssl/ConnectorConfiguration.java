@@ -1,3 +1,4 @@
+/*
 package me.kktrkkt.springboot.ssl;
 
 import org.apache.catalina.connector.Connector;
@@ -5,6 +6,11 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+*/
+/*
+* http:8080 포트를 기본으로 추가한다
+* *//*
 
 @Configuration
 public class ConnectorConfiguration {
@@ -22,3 +28,4 @@ public class ConnectorConfiguration {
         return connector;
     }
 }
+*/
