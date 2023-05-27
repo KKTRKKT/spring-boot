@@ -12,6 +12,8 @@ public class KktrkktProperties {
 
     private int height;
 
+    private String fullName;
+
     public String getName() {
         return name;
     }
@@ -34,5 +36,13 @@ public class KktrkktProperties {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }
