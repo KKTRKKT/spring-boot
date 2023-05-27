@@ -17,5 +17,6 @@ public class AppRunner implements ApplicationRunner {
         System.out.println(kktrkktProperties.getAge());
         System.out.println(kktrkktProperties.getHeight());
         System.out.println(kktrkktProperties.getFullName());
+        System.out.println(kktrkktProperties.getTime());
     }
 }
