@@ -13,6 +13,7 @@ public class AppRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        debugger.info("hi");
+        //logging 레벨이 debug 레벨에서만 출력
+        debugger.debug("hi");
     }
 }
