@@ -19,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest
 class SampleControllerWebMvcTest {
 
+    // 오직 MockMvc로만 테스트를 진행한다
     @Autowired
     private MockMvc mvc;
 
