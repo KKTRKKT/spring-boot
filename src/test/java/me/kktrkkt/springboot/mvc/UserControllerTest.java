@@ -36,4 +36,17 @@ public class UserControllerTest {
                 .andExpect(jsonPath("$.username", is(equalTo("kktrkkt"))))
                 .andExpect(jsonPath("$.password", is(equalTo("123"))));
     }
+
+    @Test
+    public void createUser_XML() throws Exception {
+        String userJson = "{\"username\":\"kktrkkt\", \"password\":\"123\"}";
+        this.mvc.perform(post("/users/create")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        // accept에 따라 ContentNegotiatingViewResolver가 해당 미디어 타입으로 응답을 반환한다
+                        .accept(MediaType.APPLICATION_XML)
+                        .content(userJson))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/User/username").string("kktrkkt"))
+                .andExpect(xpath("/User/password").string("123"));
+    }
 }
