@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // jackson의 데이터 바인딩이 기대하는대로 작동하는지 확인하는 테스트
 @JsonTest
-class SampleControllerJsonTest {
+class SampleJsonTest {
 
     @Autowired
     private JacksonTester<Sample> json;
