@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest
 public class UserControllerTest {
@@ -18,8 +20,20 @@ public class UserControllerTest {
 
     @Test
     public void hello() throws Exception {
-        mvc.perform(get("/hello"))
+        this.mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("hello"));
+    }
+
+    @Test
+    public void createUser_JSON() throws Exception {
+        String userJson = "{\"username\":\"kktrkkt\", \"password\":\"123\"}";
+        this.mvc.perform(post("/users/create")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON)
+                    .content(userJson))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.username", is(equalTo("kktrkkt"))))
+                .andExpect(jsonPath("$.password", is(equalTo("123"))));
     }
 }
