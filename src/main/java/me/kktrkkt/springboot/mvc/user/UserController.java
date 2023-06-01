@@ -1,4 +1,4 @@
-package me.kktrkkt.springboot.mvc;
+package me.kktrkkt.springboot.mvc.user;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

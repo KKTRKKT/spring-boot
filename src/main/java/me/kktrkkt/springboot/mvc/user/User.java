@@ -1,4 +1,4 @@
-package me.kktrkkt.springboot.mvc;
+package me.kktrkkt.springboot.mvc.user;
 
 public class User {
 
