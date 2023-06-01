@@ -1,4 +1,4 @@
-package me.kktrkkt.springboot.mvc;
+package me.kktrkkt.springboot.mvc.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
