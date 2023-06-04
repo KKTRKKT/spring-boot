@@ -1,0 +1,8 @@
+version: "3.0"
+
+services:
+  redis_db :
+    image: redis
+    container_name: redis_db
+    ports:
+      - 6379:6379
