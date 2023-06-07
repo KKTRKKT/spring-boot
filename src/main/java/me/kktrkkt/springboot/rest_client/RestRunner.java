@@ -22,7 +22,7 @@ public class RestRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("-------------------RestTemplate--------------------");
         restTemplate();
-        System.out.println("-------------------WebClient--------------------");\
+        System.out.println("-------------------WebClient--------------------");
         webClient();
 
     }
@@ -33,7 +33,7 @@ public class RestRunner implements ApplicationRunner {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        webClient.get().uri("http://localhost:8080/hello")
+        webClient.get().uri("/hello")
                 .retrieve()
                 .bodyToMono(String.class)
                 .subscribe(s -> {
@@ -45,7 +45,7 @@ public class RestRunner implements ApplicationRunner {
                     stopWatch.start();
                 });
 
-        webClient.get().uri("http://localhost:8080/world")
+        webClient.get().uri("/world")
                 .retrieve()
                 .bodyToMono(String.class)
                 .subscribe(s -> {
@@ -64,14 +64,14 @@ public class RestRunner implements ApplicationRunner {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        String helloResult = restTemplate.getForObject("http://localhost:8080/hello", String.class);
+        String helloResult = restTemplate.getForObject("/hello", String.class);
         System.out.println(helloResult);
 
         stopWatch.stop();
         System.out.println(stopWatch.prettyPrint());
         stopWatch.start();
 
-        String worldResult = restTemplate.getForObject("http://localhost:8080/world", String.class);
+        String worldResult = restTemplate.getForObject("/world", String.class);
         System.out.println(worldResult);
 
         stopWatch.stop();
